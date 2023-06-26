@@ -144,7 +144,7 @@ export class ScanService {
 
       model.jobid = this.jobid;
       this.scanTemplate = this.scanTemplateService.scanTemplate(model);
-      this.progress = this.modalService.showProgressAlert(this.resourceString['SDE_SCANNING1'],'');
+      
   
       return this.jobService.registerJob(model).then((result)=>{      
      

@@ -29,11 +29,11 @@ export class AppComponent implements OnInit {
     } 
     async routeScanScreen() 
     { 
-      this.modalService.showProgressAlert('','');
+     
       try { 
         await this.resourceStringService.loadResources(); 
         this.router.navigate(['scanScreen']); 
-        this.modalService.closeAllModals();
+      
       } 
       catch (error) 
       { 

@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Router} from '@angular/router';
 import { ApplicationinsightsAngularpluginErrorService } from '@microsoft/applicationinsights-angularplugin-js';
 
-import { MatDialogModule,MatDialogRef } from '@angular/material/dialog';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -51,7 +51,7 @@ import { ActionBarDirective } from './Directives/action-bar.directive';
 import { EditableFieldComponent } from './views/editable-field/editable-field.component';
 
 
-import { ScrollingModule } from '@angular/cdk/scrolling';
+//import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TextFieldDirective } from './Directives/text-field.directive';
 
 @NgModule({
@@ -77,10 +77,10 @@ import { TextFieldDirective } from './Directives/text-field.directive';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule,
+    
     FormsModule,
     ReactiveFormsModule,
-    ScrollingModule 
+     
   ],
   providers: [
      {

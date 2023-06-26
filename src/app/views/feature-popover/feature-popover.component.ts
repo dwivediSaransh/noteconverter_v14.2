@@ -1,5 +1,5 @@
 import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
-import {  MatDialogRef } from '@angular/material/dialog'
+//import {  MatDialogRef } from '@angular/material/dialog'
 import { ElementRef, Renderer2 } from '@angular/core';
 import { ScanOptionsService} from '../../services/scan-options.service';
 import { ModalService} from '../../services/modal.service';
@@ -29,7 +29,7 @@ export class FeaturePopoverComponent implements OnInit {
                 private scanOptionsService : ScanOptionsService, 
                 private modalService : ModalService,
                 private resourceStringService : ResourcestringService,
-                public mtModalRef : MatDialogRef<any>,
+              
                 private elementRef: ElementRef,
                 private renderer: Renderer2
               )
@@ -52,13 +52,13 @@ export class FeaturePopoverComponent implements OnInit {
     selectOption(option : any){
       this.scanOptionsService.setSelectedOption(option,this.from);
       this.objectSelected.emit(option);
-      this.modalService.closeModal(this.mtModalRef);
+      
       
       this.showPopover();
     }
 
     closeModal():void{
-      this.modalService.closeModal(this.mtModalRef);
+    
     }
     
     showPopover() {

@@ -1,7 +1,7 @@
-//scan-screen.component.ts
+
 
 import { Component,ViewChild,ElementRef,Renderer2, OnInit,HostListener  } from '@angular/core';
-import {MatDialog,MatDialogRef,DialogPosition} from '@angular/material/dialog';
+
 import { FormBuilder, FormGroup, Validators,AbstractControl, ValidationErrors } from '@angular/forms';//ReactiveFormsModule,
 import {FeaturePopoverComponent} from '../feature-popover/feature-popover.component';
 import { PrivacyPolicyComponent} from '../privacy-policy/privacy-policy.component';
@@ -18,10 +18,10 @@ import {xrxJobMgmtGetInterfaceVersion} from '../../../assets/Xrx/XRXJobManagemen
 import {xrxTemplateGetInterfaceVersion} from '../../../assets/Xrx/XRXTemplate';
 import {xrxDeviceConfigGetInterfaceVersion} from '../../../assets/Xrx/XRXDeviceConfig';
 import {AppModule} from '../../app.module';
-import { ScrollingModule  } from '@angular/cdk/scrolling';
+
 
 import { EditableFieldDirective } from  '../../Directives/editable-file-name.directive';
-//import { ProgressAlertComponent} from '../../views/progress-alert/progress-alert.component';
+
 
 import { ResourcestringService} from '../../services/resourcestring.service';
 
@@ -58,7 +58,7 @@ export class ScanScreenComponent implements OnInit{
    anyType = {from : 'type'};
    anySize = {from : 'size'};
 
-  matDialogRef: MatDialogRef<any>;
+
   selectedFileFormat : FileFormat;
   selectedFileFormatOptions : FileFormatOption;
   selectedType : FileFormat;
@@ -93,7 +93,7 @@ export class ScanScreenComponent implements OnInit{
   isEmailRequired : boolean =false;
 
   constructor(
-    private dialog: MatDialog,
+   
     private formBuilder: FormBuilder,
     private modalService : ModalService,
     private scanOptionService : ScanOptionsService,
@@ -235,25 +235,23 @@ export class ScanScreenComponent implements OnInit{
       this.scanOptionService.isPlaceholderVisible = true;
       //console.log('reset :'+this.scanOptionService.isPlaceholderVisible);
       this.getDefaultValues();
-      this.errorHandlerService.wncWasReset();
+      //this.errorHandlerService.wncWasReset();
     }
     
 
     showPrivacyStatement(){
-      this.modalService.openLargeModal(PrivacyPolicyComponent);
+      //this.modalService.openLargeModal(PrivacyPolicyComponent);
     }
 
     openFileFormat(event: any){
 
       console.log(event.clientX);
       console.log(event.clientY);
-      let event_position: DialogPosition = { left: event.clientX + 'px', top: event.clientY + 'px'};
+      //let event_position: DialogPosition = { left: event.clientX + 'px', top: event.clientY + 'px'};
 
       let direction:string ='rtl';
-      this.modalService.setData({
-        from : this.const_fileFormat
-      });
-      this.modalService.openModal(FeaturePopoverComponent,event_position);
+      
+      //this.modalService.openModal(FeaturePopoverComponent,event_position);
       //modalRef.content.closeBtnName = 'Close';
     }
 
@@ -266,10 +264,10 @@ export class ScanScreenComponent implements OnInit{
       let popupHeight=221;
       this.midwidth=this.winWidth / 2;
       let rotationClass: string = '';
-      let event_position: DialogPosition; 
+      //let event_position: DialogPosition; 
       let leftPosition:number;
       if (event.clientX < this.midwidth) {
-       event_position = { left: event.clientX + 'px', top: (event.clientY - 111) + 'px'};
+       //event_position = { left: event.clientX + 'px', top: (event.clientY - 111) + 'px'};
        console.log("x less than midwidth" )
     
       }
@@ -282,15 +280,13 @@ export class ScanScreenComponent implements OnInit{
           // Popup appears on the extreme right
           rotationClass = 'popup-rotate';
         }
-         event_position= { left: leftPosition + 'px', top: (event.clientY - 111) + 'px'};
+         //event_position= { left: leftPosition + 'px', top: (event.clientY - 111) + 'px'};
       }
 
       let direction:string ='rtl'; // to be decided based on click position
-      this.modalService.setData({
-        from : this.const_type
-      });
+      
       console.log("rotation class "+ rotationClass);
-      this.modalService.openModal(FeaturePopoverComponent,event_position,rotationClass);
+      //this.modalService.openModal(FeaturePopoverComponent,event_position,rotationClass);
     }
 
     openSize(event: any){
@@ -301,11 +297,11 @@ export class ScanScreenComponent implements OnInit{
       this.midHeight=this.winHeight/2;
       console.log(event.clientX);
       console.log(event.clientY);
-      let event_position: DialogPosition;
+      //let event_position: DialogPosition;
       let leftPosition:number;
 
       if (event.clientX < this.midwidth) {
-        event_position = { left: event.clientX + 'px', top: (event.clientY - 235) + 'px'};
+        //event_position = { left: event.clientX + 'px', top: (event.clientY - 235) + 'px'};
         console.log("x less than midwidth" )
      
        }
@@ -316,14 +312,12 @@ export class ScanScreenComponent implements OnInit{
            leftPosition = event.clientX - (popupWidth - availableSpaceOnRight);
           
         }
-         event_position= { left: leftPosition + 'px', top: (event.clientY - 235) + 'px'};
+         //event_position= { left: leftPosition + 'px', top: (event.clientY - 235) + 'px'};
       }
       //event_position = { left: event.clientX + 'px', top: event.clientY + 'px'};
       let direction:string ='rtl'; // to be decided based on click position
-      this.modalService.setData({
-        from : this.const_size
-      });
-       this.modalService.openModal(FeaturePopoverComponent,event_position);
+      
+       //this.modalService.openModal(FeaturePopoverComponent,event_position);
     }
 
     
@@ -348,7 +342,7 @@ scan() {
   } else {
     this.logger.trackTrace("mainDeviceconfig() ELSE FOR if (regex.test(fileName))");
     const text = this.resourceString['SDE_CHARACTERS_CANNOT_BE'].replace('{0}', '\\ / : * ? " < > |');
-    this.errorHandlerService.showErrorAlert(text, '', null, null);
+    //this.errorHandlerService.showErrorAlert(text, '', null, null);
   }
 }
 
@@ -376,7 +370,7 @@ callback_success(reqText, respText) {
 }
 callback_failure(respText, newresp) {
   this.logger.trackTrace('callback_failure -> respText:' + respText + ' newresp:' + newresp);
-  this.errorHandlerService.DEVICE_EIP_SCANV2_SERVICES_DISABLED();
+  //this.errorHandlerService.DEVICE_EIP_SCANV2_SERVICES_DISABLED();
 }
 
  getjobmamt() {
@@ -390,7 +384,7 @@ Jobcallback_success(reqText, respText) {
 }
 Jobcallback_failure(reqText, respText) {
   this.logger.trackTrace('Jobcallback_failure -> reqText:' + reqText + ' respText:' + respText);
-  this.errorHandlerService.DEVICE_EIP_SCANV2_SERVICES_DISABLED();
+  //this.errorHandlerService.DEVICE_EIP_SCANV2_SERVICES_DISABLED();
 }
 
 CheckTemplate() {
@@ -420,7 +414,7 @@ Templatecallback_success() {
 
  Templatecallback_failure(respText, newresp) {
   this.logger.trackTrace('Templatecallback_failure -> respText:' + respText + ' newresp:' + newresp);
-  this.errorHandlerService.DEVICE_EIP_SCANV2_SERVICES_DISABLED();
+  //this.errorHandlerService.DEVICE_EIP_SCANV2_SERVICES_DISABLED();
 }
 
 onClick(){
