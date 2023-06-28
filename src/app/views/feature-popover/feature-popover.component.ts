@@ -1,5 +1,4 @@
 import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
-//import {  MatDialogRef } from '@angular/material/dialog'
 import { ElementRef, Renderer2 } from '@angular/core';
 import { ScanOptionsService} from '../../services/scan-options.service';
 import { ModalService} from '../../services/modal.service';

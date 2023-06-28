@@ -1,6 +1,5 @@
 import { Component,OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-//import { MatDialogRef } from '@angular/material/dialog';
 import { ModalService} from '../../services/modal.service';
 import { environment } from '../../../environments/environment'
 import { ProgressAlertComponent } from '../progress-alert/progress-alert.component';

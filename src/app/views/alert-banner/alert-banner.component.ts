@@ -1,5 +1,4 @@
 import { Component,Inject } from '@angular/core';
-//import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ModalService} from '../../services/modal.service';
 import {DialogData} from '../../model/global';
 
