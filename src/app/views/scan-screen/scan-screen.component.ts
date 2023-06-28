@@ -20,7 +20,7 @@ import {xrxDeviceConfigGetInterfaceVersion} from '../../../assets/Xrx/XRXDeviceC
 import {AppModule} from '../../app.module';
 
 
-import { EditableFieldDirective } from  '../../Directives/editable-file-name.directive';
+import { EditableFieldDirective } from  '../../directives/editable-file-name.directive';
 
 
 import { ResourcestringService} from '../../services/resourcestring.service';

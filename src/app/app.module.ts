@@ -29,7 +29,7 @@ import { BasicAlertComponent } from './views/basic-alert/basic-alert.component';
 
 import { GeneralAlertComponent } from './views/general-alert/general-alert.component';
 import {LogViewComponent} from '../app/views/log-view/log-view.component';
-import {XasStringDirective} from '../app/Directives/xas-string.directive';
+import {XasStringDirective} from './directives/xas-string.directive';
 
 //pipes
 import { TranslatePipe } from './filters/translate.pipe';
@@ -43,16 +43,15 @@ import { xrxDeviceConfigGetDeviceInformation } from '../assets/Xrx/XRXDeviceConf
 import {xrxStringToDom} from '../assets/Xrx/XRXXmlHandler';
 import {xrxSessionGetSessionInfo,xrxSessionParseGetSessionInfo}  from  '../assets/Xrx/XRXSession';//xrxSessionGetSessionInfoRequest,
 import {xrxGetElementValue} from '../assets/Xrx/XRXXmlHandler';
-// import {xrxCallWebservice,xrxCallAjax} from '../assets/Xrx/XRXWebservices';
+
 import * as _ from 'lodash';
-import { EditableFieldDirective } from './Directives/editable-file-name.directive';
-import { NgScrollableDirective } from './Directives/ng-scrollable.directive';
-import { ActionBarDirective } from './Directives/action-bar.directive';
+import { EditableFieldDirective } from './directives/editable-file-name.directive';
+import { NgScrollableDirective } from './directives/ng-scrollable.directive';
+import { ActionBarDirective } from './directives/action-bar.directive';
 import { EditableFieldComponent } from './views/editable-field/editable-field.component';
+import { TextFieldDirective } from './directives/text-field.directive';
 
-
-//import { ScrollingModule } from '@angular/cdk/scrolling';
-import { TextFieldDirective } from './Directives/text-field.directive';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -77,7 +76,7 @@ import { TextFieldDirective } from './Directives/text-field.directive';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    
+    OverlayModule,
     FormsModule,
     ReactiveFormsModule,
      
