@@ -240,7 +240,12 @@ export class ScanScreenComponent implements OnInit{
     
 
     showPrivacyStatement():void {
-      this.modalService.openComponentModal(PrivacyPolicyComponent);
+      const dialogRef = this.modalService.openComponentModal(PrivacyPolicyComponent);
+      
+      dialogRef.afterClosed().subscribe(() => {
+        // Subscription runs after the dialog closes
+        console.log('Dialog closed!');
+      });
     }
 
     openFileFormat(event: any){

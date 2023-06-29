@@ -6,7 +6,7 @@ import { ProgressAlertComponent } from '../progress-alert/progress-alert.compone
 import { ResourcestringService} from '../../services/resourcestring.service';
 import { resourceString} from '../../model/global';
 import { LogService } from '../../services/log.service';
-
+import { DialogRef } from '../../dialog-ref';
 
 
 @Component({
@@ -23,6 +23,7 @@ export class PrivacyPolicyComponent implements OnInit {
   
 
   constructor(
+    private dialogRef: DialogRef,
     private http: HttpClient,
     private modalService : ModalService,
     private resourceStringService : ResourcestringService,
@@ -50,7 +51,8 @@ export class PrivacyPolicyComponent implements OnInit {
     }
       
     closeModal():void{
-      this.modalService.closeModal();
+      //this.modalService.closeModal();
+      this.dialogRef.close();
     }
 
     private disableLinks(): void {
