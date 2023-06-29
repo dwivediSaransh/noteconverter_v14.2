@@ -28,7 +28,6 @@ import { AlertBannerComponent } from './views/alert-banner/alert-banner.componen
 import { BasicAlertComponent } from './views/basic-alert/basic-alert.component';
 
 import { GeneralAlertComponent } from './views/general-alert/general-alert.component';
-import {LogViewComponent} from '../app/views/log-view/log-view.component';
 import {XasStringDirective} from './directives/xas-string.directive';
 
 //pipes
@@ -50,22 +49,24 @@ import { NgScrollableDirective } from './directives/ng-scrollable.directive';
 import { ActionBarDirective } from './directives/action-bar.directive';
 import { EditableFieldComponent } from './views/editable-field/editable-field.component';
 import { TextFieldDirective } from './directives/text-field.directive';
-
-import { OverlayModule } from '@angular/cdk/overlay';
+import { InAppRootOverlayContainer } from './in-app-root-overlay-container';
+import { OverlayModule,OverlayContainer } from '@angular/cdk/overlay';
+import {PortalModule} from '@angular/cdk/portal';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogViewComponent,
+    
+    //LogViewComponent,
     PrivacyPolicyComponent,
-    ProgressAlertComponent,
+    //ProgressAlertComponent,
     ScanScreenComponent,
     FeaturePopoverComponent,
     XasStringDirective,
-    GeneralAlertComponent,
+    //GeneralAlertComponent,
     EditableFieldDirective,
-    BasicAlertComponent,
-    AlertBannerComponent,
+    //BasicAlertComponent,
+    //AlertBannerComponent,
     NgScrollableDirective,
     ActionBarDirective,
     EditableFieldComponent,
@@ -77,6 +78,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     HttpClientModule,
     BrowserAnimationsModule,
     OverlayModule,
+    PortalModule,
     FormsModule,
     ReactiveFormsModule,
      
@@ -95,7 +97,10 @@ import { OverlayModule } from '@angular/cdk/overlay';
   {
   provide: ErrorHandler,
   useClass: ApplicationinsightsAngularpluginErrorService,
-  },  
+  },
+   {
+    provide: OverlayContainer, useClass: InAppRootOverlayContainer 
+  }, 
     StorageService,
     LogService,
     ModalService,

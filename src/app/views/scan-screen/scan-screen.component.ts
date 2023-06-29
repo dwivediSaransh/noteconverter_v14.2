@@ -239,8 +239,8 @@ export class ScanScreenComponent implements OnInit{
     }
     
 
-    showPrivacyStatement(){
-      //this.modalService.openLargeModal(PrivacyPolicyComponent);
+    showPrivacyStatement():void {
+      this.modalService.openComponentModal(PrivacyPolicyComponent);
     }
 
     openFileFormat(event: any){

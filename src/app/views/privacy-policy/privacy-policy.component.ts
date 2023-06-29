@@ -6,7 +6,7 @@ import { ProgressAlertComponent } from '../progress-alert/progress-alert.compone
 import { ResourcestringService} from '../../services/resourcestring.service';
 import { resourceString} from '../../model/global';
 import { LogService } from '../../services/log.service';
-import smoothscroll from 'smoothscroll-polyfill';
+
 
 
 @Component({
@@ -20,12 +20,11 @@ export class PrivacyPolicyComponent implements OnInit {
   showVersion: string = '';
   env = environment;
   resourceString : resourceString[];
-  //declare smoothscroll : any;
+  
 
   constructor(
     private http: HttpClient,
     private modalService : ModalService,
-    
     private resourceStringService : ResourcestringService,
     private  logService: LogService,
     ){}
@@ -34,13 +33,6 @@ export class PrivacyPolicyComponent implements OnInit {
     
     
     const url = this.env.privacyPolicyUrl;
-    //this.smoothscroll.polyfill();
-    smoothscroll.polyfill();
-   
-    const element = document.getElementById('privacyContent');
-    
-    element.scrollIntoView({behavior : 'smooth'});
-    //alert(element.innerHTML);
     this.http.get(url, {responseType:'text'})
       .subscribe({
           next:(response) => {
@@ -51,7 +43,6 @@ export class PrivacyPolicyComponent implements OnInit {
         error:(error) => {
           this.logService.trackTrace("inside privacy policy error"+error);
           this.showVersion = 'v1.0'; //this.strings.VERSION
-          
           //this.modalService.showGeneralError(error);
         }
     });
@@ -59,7 +50,7 @@ export class PrivacyPolicyComponent implements OnInit {
     }
       
     closeModal():void{
-      
+      this.modalService.closeModal();
     }
 
     private disableLinks(): void {
