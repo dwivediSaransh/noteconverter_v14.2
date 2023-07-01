@@ -64,14 +64,18 @@ export class ModalService {
 
     // Attach component portal to the overlay
     const portal = new ComponentPortal(component, null, injector);
-    overlayRef.attach(portal);
+    const componentRef = overlayRef.attach(portal);
+    this.componentRef = componentRef;
 
     return dialogRef;
   }
 
     closeModal(): void {
-      
-      
+      if (this.componentRef) {
+        this.componentRef.destroy();
+        this.componentRef = null;
+        console.log("close modal service component");
+      }
     }
     
   }

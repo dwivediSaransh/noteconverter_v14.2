@@ -37,6 +37,7 @@ export class PrivacyPolicyComponent implements OnInit {
     this.http.get(url, {responseType:'text'})
       .subscribe({
           next:(response) => {
+            //console.log("api response "+response);
           this.privacyPolicy = (response as string);
           //this.showVersion = this.resourceString["VERSION"];
           
@@ -50,17 +51,12 @@ export class PrivacyPolicyComponent implements OnInit {
 
     }
       
-    closeModal():void{
-      //this.modalService.closeModal();
-      this.dialogRef.close();
-    }
-
-    private disableLinks(): void {
-      const links = document.getElementsByTagName('a');
-      for (let i = 0; i < links.length; i++) {
-        links[i].style.pointerEvents = 'none';
+    closeModal(): void{
+      
+        this.dialogRef.close();
+        this.modalService.closeModal();
       }
-    }
+    
   
 }
   

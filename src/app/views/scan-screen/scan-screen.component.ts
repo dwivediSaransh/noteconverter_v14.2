@@ -244,7 +244,8 @@ export class ScanScreenComponent implements OnInit{
       
       dialogRef.afterClosed().subscribe(() => {
         // Subscription runs after the dialog closes
-        console.log('Dialog closed!');
+      
+        console.log('Dialog after closed!');
       });
     }
 
