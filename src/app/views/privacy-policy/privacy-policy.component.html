@@ -19,7 +19,7 @@
 
     <div class="popup-content" >
         <div class="scroll-container" style="overflow:hidden" ngScrollable='{"autoHeight": true, "watchHeight": true}'>
-            <pre class="privacy-policy-content">{{this.privacyPolicy}}</pre>
+            <div class="privacy-policy-content" [innerHTML]="this.privacyPolicy"></div>
         </div>
     </div>
 </div>
