@@ -19,19 +19,6 @@ import {JobService} from '../app//services/job.service';
 import {ApiService} from '../app/services/api.service';
 import {ConfigurationService} from '../app/services/configuration.service';
 
-
-import { PrivacyPolicyComponent } from './views/privacy-policy/privacy-policy.component';
-import { ProgressAlertComponent } from './views/progress-alert/progress-alert.component';
-import { FeaturePopoverComponent } from './views/feature-popover/feature-popover.component';
-
-import { AlertBannerComponent } from './views/alert-banner/alert-banner.component';
-import { BasicAlertComponent } from './views/basic-alert/basic-alert.component';
-
-import { GeneralAlertComponent } from './views/general-alert/general-alert.component';
-import {XasStringDirective} from './directives/xas-string.directive';
-
-//pipes
-import { TranslatePipe } from './filters/translate.pipe';
 import { ModalService } from './services/modal.service';
 import { ScanScreenComponent } from './views/scan-screen/scan-screen.component';
 import {ScanService} from './services/scan.service';
@@ -44,33 +31,18 @@ import {xrxSessionGetSessionInfo,xrxSessionParseGetSessionInfo}  from  '../asset
 import {xrxGetElementValue} from '../assets/Xrx/XRXXmlHandler';
 
 import * as _ from 'lodash';
-import { EditableFieldDirective } from './directives/editable-file-name.directive';
+
 import { NgScrollableDirective } from './directives/ng-scrollable.directive';
 import { ActionBarDirective } from './directives/action-bar.directive';
-import { EditableFieldComponent } from './views/editable-field/editable-field.component';
-import { TextFieldDirective } from './directives/text-field.directive';
-import { InAppRootOverlayContainer } from './in-app-root-overlay-container';
 import { OverlayModule,OverlayContainer } from '@angular/cdk/overlay';
 import {PortalModule} from '@angular/cdk/portal';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
-    //LogViewComponent,
-    PrivacyPolicyComponent,
-    //ProgressAlertComponent,
     ScanScreenComponent,
-    FeaturePopoverComponent,
-    XasStringDirective,
-    //GeneralAlertComponent,
-    EditableFieldDirective,
-    //BasicAlertComponent,
-    //AlertBannerComponent,
     NgScrollableDirective,
     ActionBarDirective,
-    EditableFieldComponent,
-    TextFieldDirective,
   ],
   imports: [
     BrowserModule,
@@ -98,9 +70,9 @@ import {PortalModule} from '@angular/cdk/portal';
   provide: ErrorHandler,
   useClass: ApplicationinsightsAngularpluginErrorService,
   },
-   {
-    provide: OverlayContainer, useClass: InAppRootOverlayContainer 
-  }, 
+   /* {
+    provide: OverlayContainer, useClass: InAppRootOverlayContainer
+  },  */
     StorageService,
     LogService,
     ModalService,
@@ -113,7 +85,6 @@ import {PortalModule} from '@angular/cdk/portal';
     ScanService,
     ScanTemplateService,
     ResourcestringService,
-    TranslatePipe,
   ],
   
   bootstrap: [AppComponent]

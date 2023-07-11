@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ModalService } from './modal.service';
 import { AppComponent } from '../../app/app.component';
-import { GeneralAlertComponent } from '../views/general-alert/general-alert.component';
-import { AlertBannerComponent } from '../views/alert-banner/alert-banner.component';
+
 
 @Injectable({
   providedIn: 'root'

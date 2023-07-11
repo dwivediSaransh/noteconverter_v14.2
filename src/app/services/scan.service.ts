@@ -17,7 +17,7 @@ import {xrxJobMgmtGetJobDetails,xrxJobMgmtParseGetJobDetails,xrxJobMgmtParseJobS
 import {xrxParseJobStateReasons} from '../../assets/Xrx/XRX_EIPWSHelpers';
 import {environment} from '../../environments/environment';
 import {scanTemplate} from '../../app/model/scantemplate.model';
-import {BasicAlertComponent} from '../views/basic-alert/basic-alert.component';
+
 //import {ProgressAlertComponent} from '../views/progress-alert/progress-alert.component';
 import { resourceString} from '../model/global';
 import { ResourcestringService} from '../services/resourcestring.service';
@@ -300,7 +300,7 @@ export class ScanService {
       
           const title = 'SDE_DOCUMENT_SUCCESSFULLY_SCANNED'; 
           const msg = 'SDE_WILL_RECEIVE_EMAIL2';
-          this.modalService.openModalWithTitle(BasicAlertComponent,title,msg);
+          
       
           this.logService.trackTrace('if (jobState === Completed && jobStateReason == JobCompletedSuccessfully) { ');
           this.broadcastJobState('jobProgress', 'JOB_COMPLETED_SUCCESSFULLY',jobStateReason);

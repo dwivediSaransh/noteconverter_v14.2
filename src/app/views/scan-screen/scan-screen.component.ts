@@ -3,8 +3,6 @@
 import { Component,ViewChild,ElementRef,Renderer2, OnInit,HostListener  } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators,AbstractControl, ValidationErrors } from '@angular/forms';//ReactiveFormsModule,
-import {FeaturePopoverComponent} from '../feature-popover/feature-popover.component';
-import { PrivacyPolicyComponent} from '../privacy-policy/privacy-policy.component';
 import { ModalService} from '../../services/modal.service';
 import { ScanOptionsService} from '../../services/scan-options.service';
 import { FileFormat, FileFormatOption,resourceString,Strings} from '../../model/global';
@@ -18,9 +16,6 @@ import {xrxJobMgmtGetInterfaceVersion} from '../../../assets/Xrx/XRXJobManagemen
 import {xrxTemplateGetInterfaceVersion} from '../../../assets/Xrx/XRXTemplate';
 import {xrxDeviceConfigGetInterfaceVersion} from '../../../assets/Xrx/XRXDeviceConfig';
 import {AppModule} from '../../app.module';
-
-
-import { EditableFieldDirective } from  '../../directives/editable-file-name.directive';
 
 
 import { ResourcestringService} from '../../services/resourcestring.service';
@@ -239,15 +234,6 @@ export class ScanScreenComponent implements OnInit{
     }
     
 
-    showPrivacyStatement():void {
-      const dialogRef = this.modalService.openComponentModal(PrivacyPolicyComponent);
-      
-      dialogRef.afterClosed().subscribe(() => {
-        // Subscription runs after the dialog closes
-      
-        console.log('Dialog after closed!');
-      });
-    }
 
     openFileFormat(event: any){
 

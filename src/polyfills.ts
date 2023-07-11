@@ -121,4 +121,3 @@ import 'intl'; // Run `npm install --save intl`.
 
 import 'whatwg-fetch';  //Run npm install whatwg-fetch --save; 
 
-import 'smoothscroll-polyfill';

@@ -1,5 +1,4 @@
 <div class="loading-spinner" id="spinnerIcon" style="display:none"></div>
-
 <form [formGroup]="noteConvertorForm" class="scanScreen mainForm">
     <!-- Preloads the glyph font -->
     <div class="xrx-close" style="max-width:0; max-height:0;">
@@ -36,10 +35,6 @@
                 <input appTextField initialValue="" class="form-control textField text-medium login"  readOnlyClass="ad-themed" 
                 editableClass = "form-control textField text-medium login" formControlName="email" placeholder="{{this.emailPlaceHolder}}" 
                 tabindex="-1"/>
-                <!-- <appTextField [initialValue]=""  type="email" class="ad-themed">
-                  <input class="form-control textField text-medium login " formControlName="email" 
-                  placeholder="{{this.emailPlaceHolder}} " tabindex="-1"  />
-                </appTextField> -->
               </div>
             </div>
             <div class="grid-row themed">
@@ -60,33 +55,11 @@
             <div class="grid-row themed themed-header">
               <div class="column-10-50 column-offset-10-2 column-5-g-48 column-offset-5-c-1">
                 
-                <button *ngIf="this.resFilename" 
-                  #button 
-                  type="button"
-                  class="btn btn-medium subjectButton"
-                  style="text-align:left;"
-                  tabindex="-1"
-                  (click)="onClick()"
-                  [placeholder]="this.resFilename"
-                  additionalText="{{this.resfilenametemp}}"
-                  [preventDirectiveInit]="this.preventDirectiveInit" 
-                  editableField
-                >
+                <button>
                 
                 </button>
                 
-                <input *ngIf="this.resFilename"
-                  #inputField
-                  type="text"
-                  formControlName="fileName"
-                  [placeholder]="this.resFilename"
-                  additionalText="{{this.resfilenametemp}}"
-                  class="editable-field-input option-text"
-                  maxlength="1000"
-                  tabindex="-1"                
-                  [preventDirectiveInit]="this.preventDirectiveInit" 
-                  editableField
-                >
+                <input>
 
               </div>
 
@@ -99,7 +72,7 @@
             <!-- End of File Name-->
 
 
-          <div class="separator"></div>
+          <div class="separator" id="separator"></div>
 
           <!-- List of all the scan features/options  -->
           <div class="grid-row option-content">
@@ -116,12 +89,12 @@
                             </div>
 
                             <div class="text-container">
-                                <span class="left-text" xasString={{this.selectedType.title}}></span>
+                                <span class="left-text"></span>
                                   <span ng-if="feature.name=='originalSize'" class="glyph-container wnc-app">
                                       <span ng-class="feature.selectedOption.glyph"></span>
                                   </span>
 
-                                  <span class="right-text" xasString={{this.selectedTypeOptions.title}}></span>
+                                  <span class="right-text"></span>
                             </div>
                         </button>
 
@@ -136,7 +109,7 @@
                           </div>
 
                           <div class="text-container">
-                              <span class="left-text" xasString={{this.selectedSize.title}}></span>
+                              <span class="left-text"></span>
 
                               <span class="right-text" *ngIf="this.resourceString[selectedSizeOptions.title] != null">{{this.resourceString[selectedSizeOptions.title]}}</span>
                               <span class="right-text" *ngIf="this.resourceString[selectedSizeOptions.title] == null"> {{ this.selectedSizeOptions.title}}&nbsp;<span *ngIf="this.selectedSizeOptions.glyph" ngClass="{{this.selectedSizeOptions.glyph}}"> </span></span>
@@ -159,7 +132,7 @@
                   </button>
               </div>
               <div class="column-10-29 column-offset-10-1 column-5-g-30 column-offset-5-g-1">
-                  <button class="btn btn-primary btn-medium" (click)="showPrivacyStatement();">
+                  <button class="btn btn-primary btn-medium">
                     {{this.privacyStatementTitle}}
                   </button>
               </div>
