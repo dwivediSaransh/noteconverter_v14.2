@@ -32,8 +32,8 @@ import {xrxGetElementValue} from '../assets/Xrx/XRXXmlHandler';
 
 import * as _ from 'lodash';
 
-import { NgScrollableDirective } from './directives/ng-scrollable.directive';
-import { ActionBarDirective } from './directives/action-bar.directive';
+import { NgScrollableDirective } from './Directives/ng-scrollable.directive';
+import { ActionBarDirective } from './Directives/action-bar.directive';
 import { OverlayModule,OverlayContainer } from '@angular/cdk/overlay';
 import {PortalModule} from '@angular/cdk/portal';
 
