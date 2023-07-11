@@ -3,6 +3,8 @@ import { Directive, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/co
 @Directive({
   selector: '[action-bar]'
 })
+
+//check
 export class ActionBarDirective implements OnInit, OnDestroy {
   private resizeListener: (() => void) | null = null;
 

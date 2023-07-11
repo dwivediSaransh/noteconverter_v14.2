@@ -6,7 +6,7 @@ import {AppModule} from '../app.module';
   selector: '[ngScrollable]'
 })
 
-
+//check
   export class NgScrollableDirective implements OnInit {
 
     constructor(private elementRef: ElementRef) { }

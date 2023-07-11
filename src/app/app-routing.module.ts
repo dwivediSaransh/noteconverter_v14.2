@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {ScanScreenComponent} from '../app/views/scan-screen/scan-screen.component';
 
 const routes: Routes = [
-
+  {path:'*',component: ScanScreenComponent},
   {path:'scanScreen',component: ScanScreenComponent},
 ];
 
